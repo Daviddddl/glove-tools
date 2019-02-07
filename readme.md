@@ -14,7 +14,7 @@ after installing requirements, run:
 
 `python example.py --create test.txt --train 10`
 
-`python example.py --query "啊啊啊，你好啊"`
+`python example.py --query "你"`
 
 
 

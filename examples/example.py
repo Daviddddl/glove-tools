@@ -18,15 +18,19 @@ def read_corpus(filename):
             yield line.lower().translate(delchars).split(' ')
 
 
-def read_corpus_4_chn(str):
+def read_corpus_4_chn(filename):
     # using HIT LTP
     from pyltp import Segmentor
 
-    ltp_model_path = ''
+    ltp_model_path = '/home/david/PycharmProjects/PERQA/ltp_data_v3.4.0/cws.model'
     segmentor = Segmentor()
     segmentor.load(ltp_model_path)
-    words = segmentor.segment(str)
-    print("|".join(words))
+
+    with open(filename, 'r') as datafile:
+        for line in datafile:
+            words = segmentor.segment(line)
+            yield list(words)
+    # print("|".join(words))
     segmentor.release()
 
 
@@ -73,7 +77,7 @@ if __name__ == '__main__':
             print('Using wikipedia corpus')
             get_data = read_wikipedia_corpus
         else:
-            get_data = read_corpus
+            get_data = read_corpus_4_chn
 
         corpus_model = Corpus()
         corpus_model.fit(get_data(args.create), window=10)
