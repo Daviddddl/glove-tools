@@ -7,6 +7,9 @@ Adding corpus functions for Chinese, using [HIT_LTP](https://github.com/HIT-SCIR
 
 ### Simple Usage
 
+install ltp:
+`pip install pyltp`
+
 after installing requirements, run:
 
 `python example.py --create test.txt --train 10`
