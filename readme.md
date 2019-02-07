@@ -1,5 +1,10 @@
 # glove-python
 
+modified from base project: 
+[GloVe_python](https://github.com/maciejkula/glove-python)
+
+Adding corpus functions for Chinese, using [HIT_LTP](https://github.com/HIT-SCIR/pyltp) in this project. 
+
 [![Circle CI](https://circleci.com/gh/maciejkula/glove-python.svg?style=svg)](https://circleci.com/gh/maciejkula/glove-python)
 
 A toy python implementation of [GloVe](http://www-nlp.stanford.edu/projects/glove/).
