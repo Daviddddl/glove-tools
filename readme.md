@@ -5,6 +5,16 @@ modified from base project:
 
 Adding corpus functions for Chinese, using [HIT_LTP](https://github.com/HIT-SCIR/pyltp) in this project. 
 
+### Simple Usage
+
+after installing requirements, run:
+
+`python example.py --create test.txt --train 10`
+
+`python example.py --query "啊啊啊，你好啊"`
+
+
+
 [![Circle CI](https://circleci.com/gh/maciejkula/glove-python.svg?style=svg)](https://circleci.com/gh/maciejkula/glove-python)
 
 A toy python implementation of [GloVe](http://www-nlp.stanford.edu/projects/glove/).
