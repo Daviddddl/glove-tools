@@ -2,6 +2,7 @@ from __future__ import print_function
 import argparse
 import pprint
 import gensim
+import json
 
 from glove import Glove
 from glove import Corpus
@@ -22,7 +23,7 @@ def read_corpus_4_chn(filename):
     # using HIT LTP
     from pyltp import Segmentor
 
-    ltp_model_path = '/home/daivd/PycharmProjects//ltp_data_v3.4.0/cws.model'
+    ltp_model_path = '/storage/dldi/PyProjects/ltp_data_v3.4.0/cws.model'
     segmentor = Segmentor()
     segmentor.load(ltp_model_path)
 
@@ -34,6 +35,17 @@ def read_corpus_4_chn(filename):
     segmentor.release()
 
 
+def gen_perqa_txt():
+    with open('zh_session_text.txt', 'w+') as out_f:
+        with open('zh_session_ano.json', 'r') as in_f:
+            sess_json = json.load(in_f)
+            for each_name in sess_json.keys():
+                print(each_name)
+                for each_sess in sess_json[each_name]:
+                    for each_sentence in each_sess['session']:
+                        out_f.write(each_sentence + '\n')
+
+
 def read_wikipedia_corpus(filename):
     # We don't want to do a dictionary construction pass.
     corpus = gensim.corpora.WikiCorpus(filename, dictionary={})
@@ -43,8 +55,9 @@ def read_wikipedia_corpus(filename):
 
 
 if __name__ == '__main__':
-
+    # gen_perqa_txt()
     # Set up command line parameters.
+
     parser = argparse.ArgumentParser(description='Fit a GloVe model.')
 
     parser.add_argument('--create', '-c', action='store',
