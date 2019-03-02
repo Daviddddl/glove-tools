@@ -3,7 +3,14 @@
 modified from base project: 
 [GloVe_python](https://github.com/maciejkula/glove-python)
 
-Adding corpus functions for Chinese, using [HIT_LTP](https://github.com/HIT-SCIR/pyltp) in this project. 
+Adding corpus functions for Chinese, using [HIT_LTP](https://github.com/HIT-SCIR/pyltp) in this project.
+
+Download [LTP-3.4.0](https://drive.google.com/open?id=1vUMoFfDX-7IVfm9E-s6_i6jXWJriPBkq)
+
+upzip and modify the path of ltp in example/example.py 
+```python
+    ltp_model_path = '/home/david/PycharmProjects/PERQA/ltp_data_v3.4.0/cws.model'
+```
 
 ### Simple Usage
 
