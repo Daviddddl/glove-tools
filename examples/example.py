@@ -23,7 +23,8 @@ def read_corpus_4_chn(filename):
     # using HIT LTP
     from pyltp import Segmentor
 
-    ltp_model_path = '/storage/dldi/PyProjects/ltp_data_v3.4.0/cws.model'
+    # ltp_model_path = '/storage/dldi/PyProjects/ltp_data_v3.4.0/cws.model'
+    ltp_model_path = '/home/daivd/PycharmProjects/ltp_data_v3.4.0/cws.model'
     segmentor = Segmentor()
     segmentor.load(ltp_model_path)
 
